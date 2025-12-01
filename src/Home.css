@@ -1,0 +1,247 @@
+/* ================= GLOBAL PAGE ================= */
+.home-page {
+  background: #e8fff3;
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 13px 24px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-bottom: 1px solid #d6d6d6;
+  height: 80px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e6f5c;
+}
+
+/* ================= SEARCH BAR ================= */
+.search-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-bar {
+  width: 95%;
+  padding: 10px 16px 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  font-size: 17px;
+  outline: none;
+}
+
+/* ================= HEADER BUTTONS ================= */
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  padding: 8px 14px;
+  background: #1e6f5c;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cart-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+/* ================= DEPARTMENT BAR (FIXED) ================= */
+.department-bar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: #e8fff3;
+  padding: 16px 0;
+  z-index: 900;
+  border-bottom: 1px solid #d6d6d6;
+  text-align: center;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.cat-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.25s ease;
+}
+
+.cat-btn.active,
+.cat-btn:hover {
+  background: #1e6f5c;
+  color: white;
+  border-color: #1e6f5c;
+}
+
+/* ================= PRODUCTS AREA (SCROLLABLE AREA) ================= */
+.products-area {
+  margin-top: 180px; /* header + categories */
+  height: calc(100vh - 180px);
+  overflow-y: auto;
+  padding: 15px 0;
+  text-align: center;
+}
+
+/* ================= PRODUCT GRID (ROW-WISE PERFECT) ================= */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* ================= PRODUCT CARD ================= */
+.product-card {
+  width: 260px;
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f3f3f3;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  border-color: #1e6f5c;
+}
+
+/* Product Image */
+.product-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  transition: 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.07);
+}
+
+/* Product Name */
+.product-card h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin: 8px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Price Tag */
+.price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e6f5c;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Quantity Box */
+.qty-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  background: #1e6f5c;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.qty-btn:hover {
+  background: #155c4b;
+  transform: scale(1.08);
+}
+
+.qty {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Add Button */
+.add-btn {
+  width: 70%;
+  padding: 5px 0;
+  background: linear-gradient(135deg, #1e6f5c, #23a17d);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.add-btn:hover {
+  background: linear-gradient(135deg, #155c4b, #1e6f5c);
+  transform: translateY(-2px);
+}
+
+/* Out of Stock Badge */
+.out-of-stock {
+  margin-top: 10px;
+  color: #d9534f;
+  font-size: 14px;
+  font-weight: bold;
+}

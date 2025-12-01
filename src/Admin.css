@@ -1,0 +1,86 @@
+/* --- Global Reset for Reliable Scrolling --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+  /* Ensures the browser scrollbar handles overflow */
+  overflow-y: auto; 
+}
+
+/* --- Admin Page Layout (Horizontal Split) --- */
+.admin-page {
+  /* Use min-height: 100vh to ensure the page always fills the screen height */
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f7f9fc;
+  width: 100%;
+  box-sizing: border-box; /* Include padding in the width/height calculation */
+  
+  /* 🔑 KEY CHANGE: Enable Flexbox for Horizontal Layout */
+  display: flex;
+  gap: 20px; /* Space between the two columns (form and table) */
+  align-items: flex-start; /* Aligns items to the top */
+}
+
+/* --- Card Styling (Form and Table Containers) --- */
+.admin-card, .table-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0; /* Remove vertical margin */
+  
+  /* 🔑 KEY CHANGE: Distribute Space and Enable Internal Scrolling */
+  flex: 1; /* Allows both cards to take up equal width */
+  min-width: 350px; /* Ensures a minimum readable width */
+  max-width: 50%; /* Prevents any single card from dominating */
+  
+  /* Makes the content area internally scrollable if it exceeds the screen height */
+  overflow-y: auto; 
+  /* Set a maximum height to force the internal scrollbar */
+  max-height: calc(100vh - 40px); /* Screen height minus 20px top/bottom padding */
+}
+
+/* --- Table Scrolling (Horizontal) --- */
+.table-card {
+    /* Keep horizontal scrolling for wide tables */
+    overflow-x: auto; 
+}
+
+/* --- Remaining Styles (No changes needed here for layout) --- */
+.admin-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ... (Include all your button, table, and other styles here) ... */
+
+.product-table th,
+.product-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  min-width: 80px; 
+}
+
+.product-table td:last-child {
+    min-width: 150px;
+}
